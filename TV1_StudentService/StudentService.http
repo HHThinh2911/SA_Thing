@@ -1,0 +1,15 @@
+@StudentService_HostAddress = http://localhost:5100
+
+GET {{StudentService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+POST http://localhost:5100/api/student
+Content-Type: application/json
+
+{
+  "name": "Thinh",
+  "email": "thinh@gmail.com",
+  "age": 20
+}
+###

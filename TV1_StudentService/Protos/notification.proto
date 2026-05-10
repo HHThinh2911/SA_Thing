@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+// ĐÃ SỬA LẠI THÀNH TÊN CỦA STUDENT SERVICE RỒI NÈ:
+option csharp_namespace = "StudentService.Protos"; 
+
+package notify;
+
+service Notification {
+  // 1. Unary gRPC
+  rpc SendLog (LogRequest) returns (LogReply); 
+  
+  // 2. Server Streaming gRPC
+  rpc DownloadLogStream (StreamRequest) returns (stream LogMessage); 
+}
+
+// ---- Cấu trúc cho hàm cũ ----
+message LogRequest { string message = 1; }
+message LogReply { bool success = 1; }
+
+// ---- Cấu trúc cho hàm Streaming mới ----
+message StreamRequest { 
+    int32 max_items = 1; 
+}
+message LogMessage { 
+    string content = 1; 
+}

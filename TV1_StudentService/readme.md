@@ -1,0 +1,9 @@
+CREATE DATABASE student_db;
+USE student_db;
+
+CREATE TABLE Students (
+Id INT AUTO_INCREMENT PRIMARY KEY,
+Name VARCHAR(100),
+Email VARCHAR(100),
+Age INT
+);
